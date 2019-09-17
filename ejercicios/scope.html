@@ -9,10 +9,37 @@
 <body>
     <a href="/ejercicios/">Go back</a>
     <p><em>Abre la consola</em></p>
+    <p>El Scope o ámbito es lo que define el tiempo de vida de una variable, en que partes de nuestro código pueden ser usadas.</p>
+    <div>
+            <h3>Global Scope</h3>
+            <p>Variables disponibles de forma global se usa la palabra var, son accesibles por todos los scripts que se cargan en la página. Aquí hay mucho riesgo de sobreescritura. </p>
+    </div>
+    <div>
+            <h3>Function Scope</h3>
+            <p> Variables declaradas dentro de una función sólo visibles dentro de ella misma (incluyendo los argumentos que se pasan a la función).</p>
+    </div>
+    <div>
+            <h3>Block Scope</h3>
+            <p>Variables definidas dentro de un bloque, por ejemplo variables declaradas dentro un loop while o for. Se usa let y const para declarar este tipo de variables.</p>
+    </div>
+    <div>
+            <h3> Module Scope</h3>
+            <p>Cuando se denota un script de tipo module con el atributo type="module las variables son limitadas al archivo en el que están declaradas. cuando usamos react estamos usando modules</p>
+    </div>
+            
+    <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.js"></script>
     <script>
         
-    //Global Scope
+        
+    //Global Scope (objeto window)
     var message = "hello kitty"
+
+
+    //scope de funciones:
+        //var $ = function(message) {
+           // console.log('Say ' + message);
+        //}
+
 
     //Function scope
     /*function printNumbers(params) {
@@ -29,7 +56,7 @@
       }*/
 
       //Block scope
-      /*function printNumbers2(params) {
+      function printNumbers2(params) {
         for (let i = 0; i < 10; i++) {
               setTimeout (function () {
                   console.log(i)
@@ -37,9 +64,11 @@
           }
       }
 
-    printNumbers2()*/
+    printNumbers2()
 
     //module Scope 
+    //las variables solo estarán disponibles en su propio archivo.
+    //<sript type = "module" src="">
     
     </script>
 </body>
