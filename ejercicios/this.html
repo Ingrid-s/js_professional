@@ -32,11 +32,38 @@
             console.log(`whoIsThis(): ${whoIsThis()}`)*/
 
             ////this en el scope de una función usando strict mode
-            function whoIsThisStrict(){
+            /*function whoIsThisStrict(){
                 "use strict";
                 return this;
             }
-            console.log(`whoIsThisStrict(): ${whoIsThisStrict()}`)
+            console.log(`whoIsThisStrict(): ${whoIsThisStrict()}`)*/
+
+            ///This en el contexto de un objeto
+            const person = {
+                name: 'Carol',
+                saludar: function (){
+                    console.log(`Hello I'm ${this.name}`)
+                }
+            }
+            person.saludar()
+
+            // this cuando sacamos la funcion de un objeto
+            //en este caso la función acción no nos devuelve un nombre porque saludar esta dentro de el objeto anterior
+            /*const accion = person.saludar;
+            accion()*/
+
+
+            //this en el contexto de una "clase" más bien prototipo.
+            //acà this, funciona como parte del constructor y se referira a la instancia y no al objeto original, en este caso Person.
+            function Person (name){
+                this.name = name;
+            }
+
+            Person.prototype.saludar = function (){
+                console.log(`Hola, me llamo ${this.name}`)
+            }
+            const theresse = new Person('Theresse');
+            theresse.saludar();
 
         </script>
 </body>
