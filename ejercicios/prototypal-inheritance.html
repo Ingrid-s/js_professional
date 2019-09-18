@@ -43,6 +43,23 @@
       // inspeccionemos el prototipo del zelda
       // inspeccionemos el prototipo del Hero
       // inspeccionemos el prototipo del Object
+///////EN LA CONSOLA HICIMOS ESTO
+      /*Object.getPrototypeOf
+ƒ getPrototypeOf() { [native code] }
+Object.getPrototypeOf(zelda)
+{saludar: ƒ, constructor: ƒ}
+const prototypeOfZelda = Object.getPrototypeOf(zelda)
+undefined
+prototypeOfZelda === Hero.prototype
+true
+Hero.prototype.fight = function () { console.log('FIGHT!!!')}
+ƒ () { console.log('FIGHT!!!')}
+zelda.fight
+ƒ () { console.log('FIGHT!!!')}
+Hero.prototype.fight = function() { console.log('FIGHT!!!')}
+ƒ () { console.log('FIGHT!!!')}
+zelda.fight()
+VM16292:1 FIGHT!!!*/
     </script>
   </body>
 </html>
