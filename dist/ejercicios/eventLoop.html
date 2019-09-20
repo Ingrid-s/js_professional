@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Event Loop</title>
+</head>
+<body>
+    <div>
+        <h3>Event Loop</h3>
+        <p>Es el responsable de dar la apariencia de que JS es multi-hilo, cunado en realidad no lo es.</p>
+        <p>Java Script se organiza usando 2 estructuras de datos:</p>
+        <h3>Stack</h3>
+        <p>El stack es la estructura de datos que lleva registro en que parte del programa estamos<br>
+            es como un contenedor, que almacena las llamadas a funciones</p>
+        <p>Mediante Push, metemos funciones al stack, para sacarlas el método es Pop.</p>
+        <p>El stack apunta al scope y guarda esa información. En el stack lo primero que entra es lo último en salir (FILO)</p>
+        <h3>Memory Heap</h3>
+        <p>El memory Heap, es una estructura un poco menos organizada dónde se almacenan información sobre las variables, el scope etc.</p>
+
+
+        <h3>Task Queue</h3>
+        <p>Cuando hacemos peticiones y asincronísmo, estas funciones que van a pedir datos a alagún lugar de internet y volverán algún día con la respuesta ... <br>
+        van a parar a la cola de tareas o task Queue (FIF0), dónde son agendadas, cuándo transcurre el tiempo de una función setTimeOut, esta pasa del Scheduled Tasks al Task Queue. 
+        <br>
+        El event Loop, esta escuchando constantemente entre el stack y el task Queue, ¿hay tareas en la fila de tareas?, Si las hay... ¿esta vacio el stack? si... Sólo entonces el event Loop mueve la tarea del task queue al stack para que sean ejecutadas.
+        </p>
+        <p>Las promesas, que por definición son asincronas también.tienen otro elemento intemeio al scheduled task, y el task Queue, este se llama Microtaks Queue.
+            </p><h3>La cola de  Microtareas</h3>
+            <p>Microtacks Queue, FIFO, que van a tener preferencia sobre el task Queue y el cuánto el stack este vacío, <br>
+                El event Loop, tomará del microtask Queue la primera promesa en entrar y se la pasará al stack, aún cuándo el task Queue tenga tareas formadas.
+            </p>
+        <p></p>
+        
+    </div>
+</body>
+</html>

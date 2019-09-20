@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets.2f291257.css">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h3>Parsers y el Abstract Syntax Tree</h3>
+        <h5>El JS Engine recibe el código fuente y lo procesa de la siguiente manera:</h5>
+        <ul>
+            <li>El parser descompone y crea tokens que integran el AST./li>
+            </li><li>Se compila a bytecode y se ejecuta.</li>
+            <li>Lo que se pueda se optimiza a machine code y se reemplaza el código base.</li>
+        </ul>
+        <p>Un SyntaxError es lanzado cuando el motor JavaScript encuentra partes que no forman parte de la sintaxis del lenguaje y esto lo logra gracias a que se tiene un AST generado por el parser.</p>
+        <p>El parser es del 15% al 20% del proceso de ejecución por lo que hay que usar parser del código justo en el momento que lo necesitamos y no antes de saber si se va a usar o no.</p>
+        <small>el bytecode es lenguaje de más bajo nivel que hace que la ejecución sea más veloz.</small>
+
+        <p>el parser lee el código y lo descompone en tokens que son las palabras reservadas u operadores, variables para identificar que hacer con ellos.
+            si en ese momento encuentra algo que no hace sentido, entonces se lanza un SyntaxError (este es lanzado cuando el motor de JS se encuentra con partes de código que no forman parte de la sintaxis del lenguae al momento de analizar el código.)
+        </p>
+        <h3>Parser V8</h3>
+        <p>Existen dos formas de parseo:</p>
+        <ul>Eager Parsing
+            <li>Encuentra errores de sintaxis</li>
+            <li>Crea el AST</li>
+            <li>Construye scopes</li>
+        </ul>
+        <ul>Lazy Parsing
+                <li>Doble de rápido que el eager parser</li>
+                <li>No crea el AST</li>
+                <li>Construye los scopes parcialmente</li>
+            </ul>
+            <a href="https://esprima.org/">Ejemplo parseo (Tokens)</a>
+            <a href="https://astexplorer.net"> ATS</a>
+            <a href="https://astexplorer.net/#/gist/16fc27fc420f705455f2b42b6c804aa1/d9cc7988c2c743d7edfbb3c3b1abed866c975ee4">Ejemplo AST creando reglas tipo ESLINT</a>
+    </div>
+    <div class="abstracTreeBtnContainer">
+        <img src="/V8optimization.ed48e3a0.png" alt="Chome">
+        <img src="/SpiderMonkey.07bb238a.png" alt="Mozila">
+        <img src="/ChakraOptimization.c2082d1c.png" alt="Edge">
+        <img src="/JsCoreOptimization.fb0ad782.png" alt="Safari">
+    </div>
+    <div>
+        <h3>Bytecode vs Machine Code</h3>
+        <p>Bytecode es:</p>
+        <p>Portatil</p>
+        <p>Ejecutado por un máquina virtual</p>
+    </div>
+    <div>
+        <p>Machine Code:</p>
+        <p>Binario</p>
+        <p>Instrucciones específicas a una arquitectura o procesaffot</p>
+    </div>
+    
+</body>
+</html>
