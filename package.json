@@ -11,9 +11,11 @@
   "start": "parcel index.html ejercicios/index.html ejercicios/**/*.html"
  },
  "devDependencies": {
-  "parcel-bundler": "^1.12.3"
+  "parcel-bundler": "^1.12.3",
+  "typescript": "^3.6.3"
  },
  "browserslist": [
   "last 1 Chrome version"
- ]
+ ],
+ "dependencies": {}
 }
