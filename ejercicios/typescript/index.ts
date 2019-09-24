@@ -122,30 +122,31 @@ console.log(i);
 /*Las interfaces son... ¿como contratos para escribir nuestro código?
 Definen la forma exacta que debe tener un objeto, si algo es opcional, debemos hacerlo explicito*/
 enum Color {
-    Amarillo = 'Amarillo',
-    Purpura = 'Purpura',
-}
-interface Rectangulo {
+    Rojo = 'Rojo',
+    Verde = 'Verde',
+  }
+  
+  interface Rectangulo {
     ancho: number;
     alto: number;
     color?: Color;
-}
-
-let rect: Rectangulo = {
+  }
+  
+  let rect: Rectangulo = {
     ancho: 4,
     alto: 6,
-    color: Color.Purpura,
-};
-
-function area(r: Rectangulo): number {
+    // color: Color.Rojo,
+  };
+  
+  function area(r: Rectangulo): number {
     return r.alto * r.ancho;
-}
-
-const areaRect = area(rect);
-console.log(areaRect);
-
-rect.toString = function(){
-    return this.color ? `Un rectángulo ${this.color}` : `Un rectángulo`;
-}
-
-console.log(rect.toString());
+  }
+  
+  const areaRect = area(rect);
+  console.log(areaRect);
+  
+  rect.toString = function() {
+    return this.color ? `Un rectangulo ${this.color}` : `Un rectangulo`;
+  };
+  
+  console.log(rect.toString());

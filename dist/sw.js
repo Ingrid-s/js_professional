@@ -132,12 +132,20 @@ self.addEventListener('fetch', event => {
 
   event.respondWith(cachedResponse(request)); //para actualizar el cache y asegurar que tenemos la versión más reciente de los archivos:
 
-  event.waitUntil(uptdateCache(request));
+  event.waitUntil(updateCache(request));
 });
 
 async function precache() {
   const cache = await caches.open(VERSION);
-  return cache.addAll(['/', '/index.html', '/assets/index.js', '/assets/MediaPlayer.js', '/assets/plugins/AutoPlay.js', '/assets/plugins/AutoPause.js', '/assets/index.css', '/assets/bbBunny.mp4']);
+  return cache.addAll([// '/',
+    // '/index.html',
+    // '/assets/index.js',
+    // '/assets/MediaPlayer.js',
+    // '/assets/plugins/AutoPlay.js',
+    // '/assets/plugins/AutoPause.ts',
+    // '/assets/index.css',
+    // '/assets/BigBuckBunny.mp4',
+  ]);
 }
 
 async function cachedResponse(request) {
@@ -149,7 +157,7 @@ async function cachedResponse(request) {
   return response || fetch(request);
 }
 
-async function uptdateCache(request) {
+async function updateCache(request) {
   const cache = await caches.open(VERSION);
   const response = await fetch(request); //llamamos a networtk para actualizar el cache
 
@@ -183,7 +191,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44693" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38039" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
